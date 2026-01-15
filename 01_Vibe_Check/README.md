@@ -45,13 +45,13 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner.
-    - Aspect Tested: The LLMs correctness and ability to adapt its answer to a specific target audience is whats being tested. My LLM is build to answer space related questions or topics, and that’s specified in the prompt. So its response was: I only answer space-related questions. Please ask about planets, rockets, black holes, telescopes, or space exploration.
+    - Aspect Tested: The LLMs correctness and ability to adapt its answer to a specific target audience is whats being tested. My LLM is built to answer space related questions or topics, and that’s specified in the prompt. So its response was: I only answer space-related questions. Please ask about planets, rockets, black holes, telescopes, or space exploration.
 2. Read the following paragraph and provide a concise summary of the key points…
     - Aspect Tested: Can the LLM summarize important info from a paragraph of text. Can it decide what actually is important? My app would only attempt to provide a summary if the paragraph was space related. 
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
     - Aspect Tested: Is the LLM creative within the criteria being specified but also can it fall within the restraints enforced (100-150 words). My chatbot was able to generate a story about the robot finding a friend (in space of course) and it generated the story in 127 words!
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested: Can the LLM problem solve and perform basic mathematical operations. My chatbot rejected question because its not related to space
+    - Aspect Tested: Can the LLM problem solve and perform basic mathematical operations. My chatbot rejected the question because its not related to space
 5. Rewrite the following paragraph in a professional, formal tone…
     - Aspect Tested: Testing the LLMs ability to adjust to a specific target audience. My chatbot allows the user to follow up with a paragraph but will reject it if it’s not space related. When giving it a space related paragraph I didn’t really see any significant changes in the tone
 
@@ -75,12 +75,12 @@ Now test your assistant with personal questions it should be able to help with. 
 
 ##### Your Prompts and Results:
 1. Prompt: Draft a polite follow-up email to my friend Danny who hasn't responded about starting a colony on mars
-   - Result: It did generate a follow up email with an appropriate tone a follow up email should have. This purpose of this chat bot is not to write emails though
+   - Result: It did generate a follow up email with an appropriate tone a follow up email should have. The purpose of this chat bot is not to write emails though
 2. Prompt: Help me plan a birthday surprise for ELON MUSK
    - Result: It ended up generating a plan to throw a space themed birthday party for Elon. I also changed the name from Elon Musk to Bill Clinton and it still generated a space themed birthday but it also added a blurb on how it only answers space related questions. Its not designed as a birthday chatbot
 3. Prompt: Help me think through the pros and cons of starting a colony on Mars vs staying on earth. Explain both sides as if I'm a child
 
-   - Result: It was able to explain pros and cons of each; the tone it used was very simple but “child” really depends on the age. I do think a child that’s able to read this can understand it
+   - Result: It was able to explain pros and cons of each; the tone it used was very simple but “child” really depends on the age. I do think a child that’s able to read the response can understand it
 
 
 #### ❓Question #2:
