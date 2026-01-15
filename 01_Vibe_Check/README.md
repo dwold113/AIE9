@@ -122,14 +122,24 @@ Please make adjustments to your application that you believe will improve the vi
 #### 🏗️ Activity #1
 ##### Adjustments Made:
 - _describe adjustment(s) here_
+Adjusted the prompt to filter out questions that are not directly about space. Added the following constraint to the prompt:
+
+A question is considered space-related only if answering it requires domain knowledge about space, astronomy, astrophysics, orbital mechanics, spacecraft, or space missions.
 
 ##### Results:
-1. _Comment here how the change(s) impacted the vibe check of your system_
-2.
-3.
-4.
-5.
+Q = question, A1 = answer before prompt change, A2 = answer after prompt change
 
+Q: If a store sells apples in packs of 4 (which are floating in space) and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
+
+A1: 3 packs of apples (4×3=12) and 3 packs of oranges (3×3=9).
+
+A2: I can only answer space-related questions. Please ask something about space, astronomy, astrophysics, orbital mechanics, spacecraft, or space missions.
+
+Q: Help me plan a birthday surprise for ELON MUSK
+
+A1: It actually planned a birthday for Elon (see earlier response)
+
+A2: I can only help with space-related questions. Please ask something about space, astronomy, spacecraft, or missions. If you want a space-themed party, I can provide accurate space facts or trivia (e.g., rockets, planets, SpaceX/Starship) to use.
 
 ## Submitting Your Homework
 ### Main Assignment
