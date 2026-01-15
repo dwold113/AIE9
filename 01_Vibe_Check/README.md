@@ -45,20 +45,21 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner.
-    - Aspect Tested:
+    - Aspect Tested: The LLMs correctness and ability to adapt its answer to a specific target audience is whats being tested. My LLM is build to answer space related questions or topics, and that’s specified in the prompt. So its response was: I only answer space-related questions. Please ask about planets, rockets, black holes, telescopes, or space exploration.
 2. Read the following paragraph and provide a concise summary of the key points…
-    - Aspect Tested:
+    - Aspect Tested: Can the LLM summarize important info from a paragraph of text. Can it decide what actually is important? My app would only attempt to provide a summary if the paragraph was space related. 
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
-    - Aspect Tested:
+    - Aspect Tested: Is the LLM creative within the criteria being specified but also can it fall within the restraints enforced (100-150 words). My chatbot was able to generate a story about the robot finding a friend (in space of course) and it generated the story in 127 words!
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested:
+    - Aspect Tested: Can the LLM problem solve and perform basic mathematical operations. My chatbot rejected question because its not related to space
 5. Rewrite the following paragraph in a professional, formal tone…
-    - Aspect Tested:
+    - Aspect Tested: Testing the LLMs ability to adjust to a specific target audience. My chatbot allows the user to follow up with a paragraph but will reject it if it’s not space related. When giving it a space related paragraph I didn’t really see any significant changes in the tone
 
 #### ❓Question #1:
 
 Do the answers appear to be correct and useful?
 ##### ✅ Answer:
+Yes, the answers are extremely useful. It’s good to understand how the LLM behaves, whether it can follow instructions and remain within constraints. Also its good to understand if it has the ability to cater to specific audiences. No answer was technically incorrect so far and if the question asked was not a space related question it did a decent job of identifying that and notifying the user
 
 ---
 
@@ -73,18 +74,20 @@ Now test your assistant with personal questions it should be able to help with. 
 - "What can I cook with [enter ingredients] in fridge."
 
 ##### Your Prompts and Results:
-1. Prompt:
-   - Result:
-2. Prompt:
-   - Result:
-3. Prompt:
-   - Result:
+1. Prompt: Draft a polite follow-up email to my friend Danny who hasn't responded about starting a colony on mars
+   - Result: It did generate a follow up email with an appropriate tone a follow up email should have. This purpose of this chat bot is not to write emails though
+2. Prompt: Help me plan a birthday surprise for ELON MUSK
+   - Result: It ended up generating a plan to throw a space themed birthday party for Elon. I also changed the name from Elon Musk to Bill Clinton and it still generated a space themed birthday but it also added a blurb on how it only answers space related questions. Its not designed as a birthday chatbot
+3. Prompt: Help me think through the pros and cons of starting a colony on Mars vs staying on earth. Explain both sides as if I'm a child
+
+   - Result: It was able to explain pros and cons of each; the tone it used was very simple but “child” really depends on the age. I do think a child that’s able to read this can understand it
+
 
 #### ❓Question #2:
 
 Are the vibes of this assistant's answers aligned with your vibes? Why or why not?
 ##### ✅ Answer:
-
+Not yet. If I ask it a completely irrevlevant question and add a couple words about space it still attempts to answer it. It needs more strict guardrails
 ---
 
 #### 🏗️ Activity #3: Personal Vibe Checking Evals (Requires Additional Capabilities)
@@ -95,15 +98,16 @@ Now test your assistant with questions that would require capabilities beyond ba
 - "What time should I leave for the airport?"
 
 ##### Your Prompts and Results:
-1. Prompt:
-   - Result:
-2. Prompt:
-   - Result:
+1. Prompt: What spacecraft are en route to Mars today?
+   - Result: I don’t know the real-time status today. As of Oct 2024, none were en route; the next planned were NASA’s ESCAPADE twin orbiters and JAXA’s MMX (to the Mars system), both awaiting launch. For up-to-date status, check their mission pages.
+2. Prompt: What was the most recent SpaceX launch outcome?
+   - Result: I don’t know. For the latest outcome, check SpaceX’s X feed (@SpaceX), spacex.com/launches, NextSpaceflight, or Spaceflight Now’s launch log.
 
 #### ❓Question #3:
 
 What are some limitations of your application?
-##### ✅ Answer:
+##### ✅ Answer: 
+It struggles answering questions that involve getting realtime information, it also seems to give inconsistent answers (like swapping Musk for Clinton). Its also pretty slow and could use some optimizations
 
 ---
 
@@ -117,15 +121,25 @@ Please make adjustments to your application that you believe will improve the vi
 
 #### 🏗️ Activity #1
 ##### Adjustments Made:
-- _describe adjustment(s) here_
+Adjusted the prompt to filter out questions that are not directly about space. Added the following constraint to the prompt:
+
+A question is considered space-related only if answering it requires domain knowledge about space, astronomy, astrophysics, orbital mechanics, spacecraft, or space missions.
+[PR](https://github.com/dwold113/The-AI-Engineer-Challenge/pull/2)
 
 ##### Results:
-1. _Comment here how the change(s) impacted the vibe check of your system_
-2.
-3.
-4.
-5.
+Q = question, A1 = answer before prompt change, A2 = answer after prompt change
 
+Q: If a store sells apples in packs of 4 (which are floating in space) and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
+
+A1: 3 packs of apples (4×3=12) and 3 packs of oranges (3×3=9).
+
+A2: I can only answer space-related questions. Please ask something about space, astronomy, astrophysics, orbital mechanics, spacecraft, or space missions.
+
+Q: Help me plan a birthday surprise for ELON MUSK
+
+A1: It actually planned a birthday for Elon (see earlier response)
+
+A2: I can only help with space-related questions. Please ask something about space, astronomy, spacecraft, or missions. If you want a space-themed party, I can provide accurate space facts or trivia (e.g., rockets, planets, SpaceX/Starship) to use.
 
 ## Submitting Your Homework
 ### Main Assignment
