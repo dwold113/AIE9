@@ -121,10 +121,10 @@ Please make adjustments to your application that you believe will improve the vi
 
 #### 🏗️ Activity #1
 ##### Adjustments Made:
-- _describe adjustment(s) here_
 Adjusted the prompt to filter out questions that are not directly about space. Added the following constraint to the prompt:
 
 A question is considered space-related only if answering it requires domain knowledge about space, astronomy, astrophysics, orbital mechanics, spacecraft, or space missions.
+[PR](https://github.com/dwold113/The-AI-Engineer-Challenge/pull/2)
 
 ##### Results:
 Q = question, A1 = answer before prompt change, A2 = answer after prompt change
